@@ -1,7 +1,35 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <button class="button button-positive button-block" ng-click="callApi()">
-    Call API
-    </button>
-  </ion-content>
+<div class="card">
+  <div class="item item-text-wrap">
+In general, how concerned are you about the protection of your privacy ?</div>
+</div>  
+<div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Very concerned
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      concerned
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  
+
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      not concern at all
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+<button class="button button-positive" style="margin:6px;float:right">
+  Next
+</button>
+
+</ion-content>
 </ion-view>
