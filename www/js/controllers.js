@@ -28,18 +28,36 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DashCtrl', function($scope, $http) {
-  $scope.callApi = function() {
-    // Just call the API as you'd do using $http
-    $http({
-      url: 'http://auth0-nodejsapi-sample.herokuapp.com/secured/ping',
-      method: 'GET'
-    }).then(function() {
-        $scope.next = 0;
+  
+  this.questions = [];
 
-    }, function() {
-      alert("Please download the API seed so that you can call it.");
-    });
-  };
+  this.checked1 = true; 
+  this.checked2 = false; 
+  this.checked3 = false;
+  this.result   = false;
+
+  this.check = function(val)
+  {
+    if(val == 1)
+    {
+      this.checked1 = false;
+      this.checked2 = true;
+      this.checked1 = false;
+    }
+    else if(val == 2)
+    {
+      this.checked1 = false;
+      this.checked2 = false;
+      this.checked3 = true;
+    }
+    else if(val == 3)
+    {
+      this.checked1 = false;
+      this.checked2 = false;
+      this.checked3 = false;
+      this.result   = true;
+    }
+  } 
 
 })
 
