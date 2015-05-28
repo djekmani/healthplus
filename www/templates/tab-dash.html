@@ -9,13 +9,13 @@ In general, how concerned are you about the protection of your privacy ?</div>
 <div class="list">
 
   <label class="item item-radio">
-    <input type="radio" name="group"  ng-model="dash.questions[0]" value="Very concerned" ng-change="dash.check(1)">
+    <input type="radio" name="group"  ng-model="dash.questions[0]" value="4" ng-change="dash.check(1)">
     <div class="item-content">
       Very concerned
     </div>
     <i class="radio-icon ion-checkmark"></i>
   </label>  <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[0]" value="concerned" ng-change="dash.check(1)">
+    <input type="radio" name="group" ng-model="dash.questions[0]" value="2" ng-change="dash.check(1)">
     <div class="item-content">
       concerned
     </div>
@@ -23,16 +23,16 @@ In general, how concerned are you about the protection of your privacy ?</div>
   </label>  
 
   <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[0]" value="not concern at all" ng-change="dash.check(1)">
+    <input type="radio" name="group" ng-model="dash.questions[0]" value="1" ng-change="dash.check(1)">
     <div class="item-content">
       not concern at all
     </div>
     <i class="radio-icon ion-checkmark"></i>
   </label>
 
+<a href="#" class="button button-block button-assertive">Not yet</a>
 </div>
-</div>
-
+</div>  
 <div id="q2" ng-show="dash.checked2">
   <div class="card">
   <div class="item item-text-wrap">
@@ -41,13 +41,13 @@ Do you usually share your personal information with organizations that ask for i
 <div class="list">
 
   <label class="item item-radio">
-    <input type="radio" name="group"  ng-model="dash.questions[1]" value="Never" ng-change="dash.check(2)">
+    <input type="radio" name="group"  ng-model="dash.questions[1]" value="3" ng-change="dash.check(2)">
     <div class="item-content">
       Never
     </div>
     <i class="radio-icon ion-checkmark"></i>
   </label>  <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[1]" value="rarely" ng-change="dash.check(2)">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="2" ng-change="dash.check(2)">
     <div class="item-content">
       Rarely
     </div>
@@ -55,7 +55,7 @@ Do you usually share your personal information with organizations that ask for i
   </label>  
 
   <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[1]" value="sometimes" ng-change="dash.check(2)">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="1" ng-change="dash.check(2)">
     <div class="item-content">
       Sometimes
     </div>
@@ -63,7 +63,7 @@ Do you usually share your personal information with organizations that ask for i
   </label> 
 
    <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[1]" value="Always" ng-change="dash.check(2)">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="0" ng-change="dash.check(2)">
     <div class="item-content">
       Always
     </div>
@@ -83,7 +83,7 @@ If the personal information you have given to an organization is lost, stolen or
 <div class="list">
 
   <label class="item item-radio">
-    <input type="radio" name="group"  ng-model="dash.questions[2]" value="Yes" ng-change="dash.check(3)">
+    <input type="radio" name="group"  ng-model="dash.questions[2]" value="4" ng-change="dash.check(3)">
     <div class="item-content">
       Yes
     </div>
@@ -91,7 +91,7 @@ If the personal information you have given to an organization is lost, stolen or
   </label>  
 
   <label class="item item-radio">
-    <input type="radio" name="group" ng-model="dash.questions[2]" value="No" ng-change="dash.check(3)">
+    <input type="radio" name="group" ng-model="dash.questions[2]" value="2" ng-change="dash.check(3)">
     <div class="item-content">
       No
     </div>
@@ -108,6 +108,7 @@ Thanks we have specified your privacy settings</div>
   <p>response 1: {{dash.questions[0]}} </p>
   <p>response 2: {{dash.questions[1]}}</p>
   <p>response 3: {{dash.questions[2]}}</p>
+  <p>Your score is: {{dash.questions[0] + dash.questions[1] + dash.questions[2]}}</p>
 </div>
 
 </ion-content>
