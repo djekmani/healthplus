@@ -1,4 +1,4 @@
-<ion-view view-title="Dashboard" ng-controller="DashCtrl as dash">
+"<ion-view view-title="Dashboard" ng-controller="DashCtrl as dash">
   <ion-content class="padding">
 
 <div id="q1" ng-show="dash.checked1">
@@ -30,7 +30,7 @@ In general, how concerned are you about the protection of your privacy ?</div>
     <i class="radio-icon ion-checkmark"></i>
   </label>
 
-<a href="#" class="button button-block button-assertive">Not yet</a>
+<a href="#" class="button button-block button-assertive" ng-click="dash.setAwarness(true)">Not yet</a>
 </div>
 </div>  
 <div id="q2" ng-show="dash.checked2">
@@ -108,7 +108,8 @@ Thanks we have specified your privacy settings</div>
   <p>response 1: {{dash.questions[0]}} </p>
   <p>response 2: {{dash.questions[1]}}</p>
   <p>response 3: {{dash.questions[2]}}</p>
-  <p>Your score is: {{dash.questions[0] + dash.questions[1] + dash.questions[2]}}</p>
+  <p>Your score is: {{dash.privacy.score}} </p>
+  <p>Your awarness is: {{dash.privacy.awarness}} </p>
 </div>
 
 </ion-content>

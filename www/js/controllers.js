@@ -29,7 +29,10 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $http) {
   
-
+  this.privacy = {
+    score: 0,
+    awarness: false
+  };
 
   this.questions = [];
 
@@ -37,6 +40,20 @@ angular.module('starter.controllers', [])
   this.checked2 = false; 
   this.checked3 = false;
   this.result   = false;
+
+  this.setAwarness = function(level)
+  {
+    this.privacy.awarness = level;
+    this.checked1 = false;
+    this.checked2 = false;
+    this.checked3 = false;
+    this.result   = true;
+  }
+  this.score = function(val1 , val2 , val3)
+  {
+    this.privacy.score =  parseInt(val1)+parseInt(val2)+parseInt(val3)
+  }
+
 
   this.check = function(val)
   {
@@ -58,6 +75,7 @@ angular.module('starter.controllers', [])
       this.checked2 = false;
       this.checked3 = false;
       this.result   = true;
+      this.score(this.questions[0] , this.questions[1] , this.questions[2]);
     }
   } 
 
