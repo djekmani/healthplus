@@ -31,9 +31,11 @@ angular.module('starter.controllers', [])
   
   this.privacy = {
     score: 0,
-    awarness: false
+    ignoreQuestions: true,
+    groups: ["Fundamentalist" , "The pragmatic" ,  "The unconcerned" , "The Should-be-Protected"],
+    userGroup: false
   };
-
+  this.group = false;
   this.questions = [];
 
   this.checked1 = true; 
@@ -41,17 +43,41 @@ angular.module('starter.controllers', [])
   this.checked3 = false;
   this.result   = false;
 
-  this.setAwarness = function(level)
+  this.ignoreQuestions = function()
   {
-    this.privacy.awarness = level;
+    this.privacy.ignoreQuestions = false;
     this.checked1 = false;
     this.checked2 = false;
     this.checked3 = false;
     this.result   = true;
   }
+  this.setGroup = function()
+  {
+    if(this.privacy.ignoreQuestions)
+    {
+      if(this.privacy.score >= 9) this.privacy.userGroup = 0; 
+      
+      else if(this.privacy.score >= 6)  this.privacy.userGroup = 1;
+      
+      else
+      {
+        this.privacy.userGroup = 2;
+      } 
+    }
+    
+    else  this.privacy.userGroup = 3; 
+  }
+
+  this.getGroup = function()
+  {
+   this.setGroup();
+
+    return this.privacy.groups[this.privacy.userGroup];
+  }
+
   this.score = function(val1 , val2 , val3)
   {
-    this.privacy.score =  parseInt(val1)+parseInt(val2)+parseInt(val3)
+    this.privacy.score =  parseInt(val1) + parseInt(val2) + parseInt(val3);
   }
 
 

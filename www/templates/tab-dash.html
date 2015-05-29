@@ -17,7 +17,7 @@ In general, how concerned are you about the protection of your privacy ?</div>
   </label>  <label class="item item-radio">
     <input type="radio" name="group" ng-model="dash.questions[0]" value="2" ng-change="dash.check(1)">
     <div class="item-content">
-      concerned
+      Concerned
     </div>
     <i class="radio-icon ion-checkmark"></i>
   </label>  
@@ -25,12 +25,12 @@ In general, how concerned are you about the protection of your privacy ?</div>
   <label class="item item-radio">
     <input type="radio" name="group" ng-model="dash.questions[0]" value="1" ng-change="dash.check(1)">
     <div class="item-content">
-      not concern at all
+      Not concerned at all
     </div>
     <i class="radio-icon ion-checkmark"></i>
   </label>
 
-<a href="#" class="button button-block button-assertive" ng-click="dash.setAwarness(true)">Not yet</a>
+<a href="#" class="button button-block button-assertive" ng-click="dash.ignoreQuestions()">Not yet</a>
 </div>
 </div>  
 <div id="q2" ng-show="dash.checked2">
@@ -103,13 +103,14 @@ If the personal information you have given to an organization is lost, stolen or
 <div id="result" ng-show="dash.result">
  <div class="card">
   <div class="item item-text-wrap">
-Thanks we have specified your privacy settings</div>
+Thanks, we have specified your privacy settings</div>
 </div>  
   <p>response 1: {{dash.questions[0]}} </p>
   <p>response 2: {{dash.questions[1]}}</p>
   <p>response 3: {{dash.questions[2]}}</p>
   <p>Your score is: {{dash.privacy.score}} </p>
-  <p>Your awarness is: {{dash.privacy.awarness}} </p>
+  <p>Your Group is: {{dash.getGroup()}} </p>
+  <p>Your Group user is: {{dash.privacy.userGroup}} </p>
 </div>
 
 </ion-content>
