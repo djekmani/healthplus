@@ -6,17 +6,21 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-positive">
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Dashboard" icon-off="ion-speedometer" icon-on="ion-ios-speedometer" href="#/tab/dash">
+  <ion-tab title="Privacy settings" icon-off="ion-speedometer" icon-on="ion-ios-speedometer" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab title="Your Health" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/chats">
+  <ion-tab title="Ask Doctors" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/chats">
     <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-tab>
 
+  <ion-tab title="Top doctors" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/doctors">
+    <ion-nav-view name="tab-doctors"></ion-nav-view>
+  </ion-tab>
+
   <!-- Account Tab -->
-  <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab title="log out" icon-off="ion-log-out" icon-on="ion-log-out" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
 
